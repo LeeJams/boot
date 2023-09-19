@@ -1,13 +1,7 @@
 package org.example.springbootdev.file.controller;
 
-import org.example.springbootdev.FileAdapter;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -22,7 +16,7 @@ public class ApiController {
 
     public static String getTagValue(String tag, Element eElement) {
         NodeList nlList = eElement.getElementsByTagName(tag).item(0).getChildNodes();
-        Node nValue = (Node) nlList.item(0);
+        Node nValue = nlList.item(0);
         if(nValue == null) {
             return null;
         }
